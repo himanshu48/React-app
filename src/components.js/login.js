@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
@@ -35,14 +35,14 @@ class login extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-        isloggedin && this.props.callbackFromNavbar(formJSON.userName)
+        isloggedin && this.props.callbackFromNavbar(formJSON.userName);
     }
     componentDidMount(){
         this.inputRef.current.focus()
     }
     render() {
         return (
-            <div className="container">
+            <div className="container"><br/><br/><br/><br/>
                 <div className="row">
                     <div className="col-md-4 col-sm-5 offset-sm-4 offset-md-4">
                         <div className="jumbotron">

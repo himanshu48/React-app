@@ -76,7 +76,7 @@ class registration extends Component {
     }
     render() {
         return (
-            <div className="container">
+            <div className="container"><br/><br/><br/>
                 <div className="row">
                     <div className="col-md-4 offset-md-4">
                         <div className="jumbotron">
