@@ -15,6 +15,7 @@ class navbar extends Component {
     logout = () => {
         sessionStorage.clear()
         this.setState({ user: '' })
+        window.location.replace('/login')
     }
     componentDidMount() {
         var user = sessionStorage.getItem('user') || ''

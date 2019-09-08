@@ -22,20 +22,23 @@ class login extends Component {
     async login(event) {
         event.preventDefault()
         var formJSON = {
-            userName: this.state.email,
+            username: this.state.email,
             password: this.state.password
         };
+
         var isloggedin = false
         await axios.post('http://localhost:2000/login', formJSON)
             .then(function (response) {
                 console.log(response.data.message);
-                sessionStorage.setItem('user',formJSON.userName)
+                sessionStorage.setItem('user',formJSON.username)
+                sessionStorage.setItem('token',response.data.token)
                 isloggedin = true
             })
             .catch(function (error) {
                 console.log(error);
             });
-        isloggedin && this.props.callbackFromNavbar(formJSON.userName);
+        isloggedin && this.props.callbackFromNavbar(formJSON.username);
+        window.location.replace('/home')
     }
     componentDidMount(){
         this.inputRef.current.focus()
