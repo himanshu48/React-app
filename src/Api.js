@@ -7,6 +7,11 @@ instance.defaults.headers.common['Authorization'] = 'Bearer ' + sessionStorage.g
 
 instance.interceptors.request.use(
   config => {
+    // let token = sessionStorage.getItem('token')
+    // if (token) {
+    //   config.headers['Authorization'] = 'Bearer ' + token;
+    // }
+    // config.url = config.url.replace('', '')
     return config;
   },
   error => {
